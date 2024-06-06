@@ -1,10 +1,14 @@
+// JS
+
 let bookCount = prompt("Kitab sayini qeyd edin: ");
 let grade = parseInt(bookCount);
 let price = 5;
 let discountRate;
 
 if (isNaN(grade)) {
-  alert("regem daxil edin");
+  alert("Dogru deyer / regem daxil edin");
+} else if (grade < 0) {
+  alert("Dogru deyer daxil edin");
 } else if (grade <= 19) {
   discountRate = 5;
 } else if (grade <= 49) {
@@ -21,5 +25,7 @@ alert(
     Toplam qiymet ${price * grade} azn, 
     Endirim faizi ${discountRate} %,
     Endirim tutari ${(grade * price * discountRate) / 100},
-    Endirimli meblegi ${ grade * price - (grade * price * discountRate) / 100} azn`
+    Endirimli meblegi ${
+      grade * price - (grade * price * discountRate) / 100
+    } azn`
 );
